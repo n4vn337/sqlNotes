@@ -1,0 +1,32 @@
+a pk from one table found in another table
+used to link between two tables 
+
+CREATE TABLE customers(
+    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
+
+
+CREATE TABLE transactions(
+	transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+    amount DECIMAL(5,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
+);
+
+
+to drop a FOREIGN key
+ALTER TABLE transactions
+DROP FOREIGN KEY transaction_ibfk_1;
+
+where did we get transaction_ibfk_1 from
+db name -> table -> foreign keys -> transaction_ibfk_1
+
+
+to give the foreign key a unique name/ or to add once the table is created
+ALTER TABLE transactions
+ADD CONSTRAIN fk_customer_id
+FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
+
+ADD CONSTRAIN fk_customer_id: is not required until and unless you want to specify a particular name to the constraint

@@ -1,0 +1,20 @@
+used to find values within a specific column more quickly
+mysql normally searches sequentially through a column
+the longer the column, more expensive the operation is
+UPDATE takes more time, SELECT takes less time
+
+SHOW INDEXES FROM customers;
+
+
+CREATE INDEX last_name_idx
+ON customers(last_name);
+
+Multicolumn INDEX
+CREATE INDEX lfname_idx
+ON customers(last_name, first_name);
+
+
+to drop
+
+ALTER TABLE customers
+DROP INDEX last_name_idx;

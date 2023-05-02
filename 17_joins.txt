@@ -1,0 +1,18 @@
+join is a clause used to combine rows from 2 or more tables based on a related column b/w them
+such as PK
+
+are of three types
+1. INNER JOIN: join together based on some links
+SELECT *
+FROM transactions INNER JOIN customers
+ON transactions.customer_id = customers.customer_id;
+
+2. LEFT JOIN: everything from left even though there's nothing in right table
+SELECT *
+FROM transactions LEFT JOIN customers
+ON transactions.customer_id = customers.customer_id;
+
+3. RIGHT JOIN
+SELECT *
+FROM transactions RIGHT JOIN customers
+ON transactions.customer_id = customers.customer_id;

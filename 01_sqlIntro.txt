@@ -1,0 +1,25 @@
+structured querry language
+used to
+    create
+    retrieve
+    update
+    delete
+data from the database
+
+two types of databases
+1. relational
+    resembles an excel spreadsheet -> rows and columns
+    tables can form relationship with one another with the help of keys
+    Sql
+2. non relational
+    oragnized in any format but a tables
+        key value pairs
+        graph data structures
+    NoSql
+
+We need DBMS -> workspace to write sql statements and work generally with our dbs
+there are diff dbms' and they have very slight difference in their querry 
+if familiar with one its easy to switch to another one from there
+mysql, microsoft sql server, oracle, postgresql
+
+note: no case sensitivy in mysql

@@ -1,0 +1,27 @@
+what values can be placed in the column
+and a method to check input
+
+CREATE TABLE employees (
+    employee_id INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    hourly_pay DECIMAL(5,2),
+    hire_date DATE,
+    CONSTRAINT chk_hourly_pay CHECK (hourly_pay>=10.00)
+);
+
+the main part is just -> CHECK (hourly_pay>=10.00)
+
+but we create a constraint named chk_hourly_pay by -> CONSTRAINT chk_hourly_pay CHECK (hourly_pay>=10.00)
+so we can easily identify when we want to drop it
+
+to add once the table is created
+ALTER TABLE employees
+ADD CONSTRAINT chk_hourly_pay CHECK(hourly_pay>=10.00);
+
+
+we get an error 3819 if we input an hourly_pay which is less than 10.00, saying violated check constraint
+
+to delete a check 
+ALTER TABLE employees
+DROP CHECK chk_hourly_pay;

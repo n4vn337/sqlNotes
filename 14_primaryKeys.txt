@@ -1,0 +1,13 @@
+can be applied to a column where the value should be unique and NOT NULL
+one PRIMARY key per table -> used as an identifier
+
+
+CREATE TABLE transactions(
+    trans_id INT PRIMARY KEY,
+    amt DECIMAL(4,2)
+);
+
+to add later
+ALTER TABLE transactions
+ADD CONSTRAINT
+PRIMARY KEY (trans_id);

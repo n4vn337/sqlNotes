@@ -1,0 +1,19 @@
+virtual table based on the results of an sql statement
+fields in a view are fileds from one or more real tables in the database
+they're not real tables, but can be interacted with as if they were
+
+
+create
+ CREATE VIEW employee_attendance AS
+ SELECT first_name, last_name
+ FROM employees;
+
+select * from employee_attendance;
+
+DROP VIEW employee_attendance;
+
+
+create view customer_email as
+select email
+from customers;
+

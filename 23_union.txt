@@ -1,0 +1,20 @@
+union combines the results of two or more SELECT statements
+should have the same number of columns
+
+SELECT * FROM income;
+SELECT * FROM expenses;
+
+SELECT * FROM income
+UNION
+SELECT * FROM expenses;
+
+
+SELECT first_name, last_name FROM employees
+UNION
+SELECT first_name, last_name FROM customers;
+
+for also including dupelicates
+
+SELECT first_name, last_name FROM employees
+UNION ALL
+SELECT first_name, last_name FROM customers;

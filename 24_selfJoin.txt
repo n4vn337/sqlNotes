@@ -1,0 +1,24 @@
+join another copy of a table to itself
+used to compare rows of the same table
+helps to display a heirarchy of data
+
+there is outer, left and right join
+left: will display all rows from left
+right: all rows from right 
+
+we use the original table and then the copy table 
+
+
+select * 
+from customers as a
+inner join customers as a;
+
+
+original -> a
+copy -> a 
+
+select a.customer_id, a.first_name, a.last_name,
+		concat(a.first_name, ' ',a.last_name) as 'referred by'
+from customers as a
+inner join customers as a
+on a.referral_id=a.customer_id;

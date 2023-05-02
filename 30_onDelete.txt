@@ -1,0 +1,15 @@
+ON DELETE SET NULL -> when FK is deleted, replace with NULL
+ON DELETE CASCADE -> when FK is deleted, delete the row
+
+DELETE FROM customers
+WHERE customer_id=4;
+will give an error -> to force do it 
+SET foreign_key_checks=0;
+
+
+alter etable transactions frop foreign key fk_customer_id;
+
+alter table transactions
+add constrain fk_customer_id
+foreign key(customer_id) references customers(customer_id)
+on delete set null;

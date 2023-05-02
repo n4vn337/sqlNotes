@@ -1,0 +1,16 @@
+you can run multiple commands at once just seperate each with a semicolon
+
+ctrl+enter -> execute the querry
+
+add column:
+ALTER TABLE customers
+ADD COLUMN email VARCHAR(50);
+
+update with data
+UPDATE customers
+SET email="ffish@mailcom"
+WHERE customer_id=1;
+
+increment 1 for all values in column
+UPDATE employees
+set hourly_pay=hourly_pay+1;

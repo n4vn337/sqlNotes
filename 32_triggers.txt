@@ -1,0 +1,64 @@
+when an event happends, do something
+eg. (INSERT, UPDATE, DELETE)
+check data, handle errors, auditing tables
+something you should master, really helpful
+
+
+two keywords: 
+BEFORE
+AFTER
+
+ALTER TABLE employees
+ADD COLUMN salary DECIMAL(10,2) AFTER hourly_pay;
+
+UPDATE employees
+SET salary=hourly_pay * 2080;
+
+SELECT * FROM employees;
+
+
+CREATE TRIGGER before_hourly_pay_update
+BEFORE UPDATE ON employees
+FOR EACH ROW
+SET NEW.salary=(NEW.hourly_pay * 2080);
+
+the above only works on update of hourly_pay
+lets create one for when we INSERT
+
+CREATE TRIGGER before_hourly_pay_update
+BEFORE INSERT ON employees
+FOR EACH ROW
+SET NEW.salary=(NEW.hourly_pay * 2080);
+
+--------------
+
+CREATE TABLE expenses(
+	expense_id INT PRIMARY KEY,
+    expense_name VARCHAR(50),
+	expense_total DECIMAL(10,2)
+);
+
+SELECT * FROM expenses;
+
+INSERT INTO expenses
+VALUES (1, 'salaries', 0),(2,'suplies',0),(3,'taxes',0);
+
+CREATE TRIGGER after_salary_delete
+AFTER DELETE ON employees
+FOR EACH ROW
+UPDATE expenses
+SET expense_total=expense_total-OLD.salary
+WHERE expense_name='salaries';
+
+DELETE FROM employees
+WHERE employee_id=5;
+
+SELECT * FROM expenses;
+
+
+CREATE TRIGGER after_salary_delete
+AFTER UPDATE ON employees
+FOR EACH ROW
+UPDATE expenses
+SET expense_total=expense_total+ (NEW.salary-OLD.salary)
+WHERE expense_name='salaries';

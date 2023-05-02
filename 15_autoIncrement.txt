@@ -1,0 +1,12 @@
+applied to a column that is set to a key
+by defualt the PK is set 1
+
+CREATE TABLE transactions(
+    trans_id INT PRIMARY KEY AUTO_INCREMENT,
+    amt DECIMAL(5,2)
+);
+
+
+to begin at a different value
+ALTER TABLE transactions
+AUTO_INCREMENT=1000;

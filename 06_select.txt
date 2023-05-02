@@ -1,0 +1,18 @@
+how to select/querry all data from the table
+SELECT * FROM employees;
+
+to print only certain data only (columns) -> can change the order too
+SELECT employee_id, last_name, first_name
+FROM employees;
+
+
+WHERE clause: when looking for something specific
+SELECT * FROM employees WHERE employee_id>3;
+
+SELECT * FROM employees WHERE employee_id!=3; -> not equal ! = 
+
+
+to see if column is having null value or not
+SELECT *
+FROM employees
+WHERE hire_date IS NULL;

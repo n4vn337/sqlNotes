@@ -1,0 +1,24 @@
+a query within another query
+query(subquery)
+
+write subquery first and then add it in parenthesis and use it 
+
+SELECT AVG(hourly_pay) FROM employees;
+
+
+SELECT first_name, last_name, hourly_pay, 
+(SELECT AVG(hourly_pay) FROM employees) AS avg_pay
+FROM employees;
+
+
+SELECT first_name, last_name, hourly_pay
+FROM employees
+WHERE hourly_pay> (SELECT AVG(hourly_pay) FROM employees);
+
+
+select first_name, last_name
+from customers
+where customer_id in 
+(select distinct customer_id 
+from transactions
+where customer_id is not null);

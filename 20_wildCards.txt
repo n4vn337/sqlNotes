@@ -1,0 +1,24 @@
+use LIKE operator instead of '='
+used to substitute one or more chars in a string
+
+% -> any num of random chars 
+s% anything that should start with s
+%s anything that should end with s 
+
+SELECT * FROM employees
+WHERE first_name LIKE 's%';
+
+WHERE hire_date LIKE '%02';
+
+_ -> represents one random char 
+_eacher any char in _ position
+
+SELECT * FROM employees
+WHERE job LIKE '_each_r';
+
+WHERE hire_date LIKE '____-01-02';
+
+
+combine both together
+
+WHERE job LIKE '_a%';

@@ -1,0 +1,18 @@
+INSERT INTO employees
+VALUES (1, "John", "Doe", 43.99, "2020-01-02");
+
+follow the sequence of employee_id to hire_date
+date format: YYYY-MM-DD
+
+
+multiple rows: that no of parenthesis
+INSERT INTO employees
+VALUES 
+    (2,"Squidwar","Tentacles",15.00,"2020-07-29"),
+    (3,"Spongebob","Squarepants",12.50,"2019-04-12"),
+    (4,"Patrick","Star",22.88,"2021-12-23");
+
+
+to add to particular columns only in a new row; we can also use this to modify the sequence of data entry
+INSERT INTO employees (employee_id,first_name,last_name)
+VALUES (5,"Sandy","Cheeks");

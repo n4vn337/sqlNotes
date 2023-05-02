@@ -1,0 +1,17 @@
+it is a stored program in which we can pass parameters to return a value
+
+COUNT(): number of rows 
+SELECT COUNT(amount)
+FROM transactions;
+
+SELECT COUNT(amount) as count -> this will rename the column title
+
+MAX(): maximum value in the coloumn
+MIN(): minimum value in the column
+AVG(): avg of the column values
+SUM(): sum of all the values in the column
+
+
+CONCAT(): joining two rows
+SELECT CONCAT(first_name,' ', last_name) AS full_name
+FROM employees;

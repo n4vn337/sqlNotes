@@ -1,0 +1,16 @@
+if we want the column to have a default value if not specified in input
+
+add a constraint when creating a table
+CREATE TABLE products(
+    product_id INT,
+    product_name VARCHAR(25),
+    price DECIMAL(4,2) DEFAULT 0
+)
+
+ALTER TABLE products
+ALTER price SET DEFAULT 0;
+
+
+while inserting we have to explicitly mention what columns are we adding to the table to not get the error 1136
+insert into products (product_id, product_name)
+value(27, "straw");

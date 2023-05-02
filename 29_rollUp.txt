@@ -1,0 +1,22 @@
+extension of group by clause -> add WITH ROLLUP
+produces another row and shows the grand total(super-aggregate value)
+
+SELECT SUM(amount), order_date
+FROM transactions
+GROUP BY order_date WITH ROLLUP;
+
+
+SELECT COUNT(transaction_id), order_date
+FROM transactions
+GROUP BY order_date WITH ROLLUP;
+
+
+SELECT COUNT(transaction_id) AS '# Order', customer_id
+FROM  transactions
+GROUP BY customer_id WITH ROLLUP;
+
+
+SELECT employee_id, SUM(hourly_pay) AS 'Pay'
+FROM  employees
+GROUP BY employee_id WITH ROLLUP;
+

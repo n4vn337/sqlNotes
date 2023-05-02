@@ -1,0 +1,20 @@
+for windows:
+
+mysql.com -> community downloads -> installer for windows
+
+custom -> add
+    most recent mysql server
+    applicatiom -> most recent workbench
+    shell <- there's this as well if needed
+-> next and finish the installation
+
+set root password -> password <- keeping it simple
+
+next next next -> voila, done
+
+'remove all connections' -> assuming its all fresh and new
+click + near mysql connections
+    any name
+    dont make any other changes
+
+click the connection and enter password -> we are in the workbench now

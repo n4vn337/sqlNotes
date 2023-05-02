@@ -1,0 +1,26 @@
+sorts the results of a querry in ascending or descending
+by default -> we dont explicitly need to write to print in 
+    in ascending order
+    or alphabetically
+
+we can directly write
+SELECT * FROM employees
+ORDER BY last_name;
+
+or:
+ORDER BY last_name ASC;
+
+
+to order in descending -> add DESC
+SELECT * FROM employees
+ORDER BY last_name DESC;
+
+-----
+if two values are same, we can add another column on which it will be shorted 
+
+SELECT * FROM transactions
+ORDER BY amount,customer_id;
+
+and we can add ASC and DESC too here
+
+ORDER BY amount DESC,customer_id ASC;

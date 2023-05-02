@@ -1,0 +1,7 @@
+AUTOCOMMIT; -> auto saves every transaction
+by default its set to be ON
+
+COMMIT; -> manually save each transaction
+SET AUTOCOMMIT=OFF;
+
+ROOLBACK; -> reset to last snapshot/ undo

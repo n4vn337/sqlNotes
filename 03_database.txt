@@ -1,0 +1,20 @@
+database -> think of it as a folder which holds tables 
+tables -> files
+
+CREATE DATABASE myDB; -> end the statement with a semicolon, it acts like a period meaning the statement ends here
+myDB is the db name we will create
+
+lightning icon to execute
+
+to use the db we created
+USE myDB;
+schema -> mydb -> set as default scheme
+
+to delete the db
+DROP DATABASE myDB;
+
+ALTER DATABASE myDB READ ONLY=1; -> read only mode: we cant make any modification but can access
+we cant delete read only db
+
+to switch back to editable
+ALTER DATABASE myDB READ ONLY=0;

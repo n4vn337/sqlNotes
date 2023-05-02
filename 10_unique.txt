@@ -1,0 +1,12 @@
+CREATE TABLE products(
+    product_id INT,
+    product_name VARCHAR(25) UNIQUE,
+    price DECIMAL(4,2)
+);
+
+with the keyword UNIQUE, we cant insert similar name product
+
+to add UNIQUE after the table is created
+ALTER TABLE products
+ADD CONSTRAIN
+UNIQUE(product_name);

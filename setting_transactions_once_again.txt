@@ -1,0 +1,18 @@
+drop table transactions;
+
+create table transactions(
+	transaction_id int primary key auto_increment,
+    amount decimal(5,2) not null,
+    customer_id int,
+    order_date date
+);
+
+insert into transactions (amount, customer_id, order_date)
+values
+(4.99,3,'2023-01-01'),
+(2.89,2,'2023-01-01'),
+(3.38,3,'2023-01-02'),
+(4.99,1,'2023-01-02'),
+(1.00,null,'2023-01-03'),
+(2.49,4,'2023-01-03'),
+(5.48,null,'2023-01-03');

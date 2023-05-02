@@ -1,0 +1,46 @@
+a prepared SQL code that you can save
+comes handy if there's a query that you write often
+reduces network traffic
+increases performance
+secure, admin can grant permission to use
+increases memory usage of every connection
+
+DELIMITER $$
+CREATE PROCEDURE get_customers()
+BEGIN
+    SELECT * FROM customers;
+END $$
+DELIMITER ;
+
+we temperarily change the DELIMITER from ; to $$ as the statement would end at first ; which we dont want
+
+now we can call get_customers
+CALL get_customers();
+------------
+
+to place some input parameters as well
+
+DELIMITER $$
+CREATE PROCEDURE find_customer(IN id INT)
+BEGIN
+    SELECT *
+    FROM customers
+    WHERE customer_id=id;
+END $$
+DELIMITER ;
+
+call find_customer(1);
+
+
+DROP PROCEDURE find_customer;
+------------
+sending two parameters
+
+DELIMITER $$
+CREATE PROCEDURE find_customer(IN fname VARCHAR(50), IN lname VARCHAR(50))
+BEGIN
+    SELECT *
+    FROM customers
+    WHERE first_name=fname AND last_name=lname;
+END $$
+DELIMITER ;

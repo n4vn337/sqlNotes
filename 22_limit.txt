@@ -1,0 +1,16 @@
+its a clause used to limit the number of records
+useful if working with alot of date
+can be used to display a large data on pages (pagination)
+
+SELECT * FROM customers
+LIMIT 3;
+
+can combine with order by
+SELECT * FROM customers
+ORDER BY last_name
+LIMIT 3;
+
+
+LIMIT with offset -> display 1 after 2
+SELECT * FROM customers
+LIMIT 2,1;

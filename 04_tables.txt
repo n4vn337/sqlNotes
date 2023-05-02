@@ -1,0 +1,53 @@
+consists of rows and columns
+
+CREATE TABLE employees (
+    employee_id INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    hourly_pay DECIMAL(5,2),
+    hire_date DATE
+);
+
+columns listed within ()
+employee_id INT -> meaning employee_id will only store integer values  [INT is a datatype]
+first_name VARCHAR(50) -> it will store characters upto 50 [VARCHAR is a datatype]
+hourly_pay DECIMAL(5,2) -> store decimal of total 5 digit with precision of 2 digits after decimal (highest: 999.99)
+hire_date DATE -> date is a datatype, if we want to work with date and time there's datetime too
+
+to select a table
+SELECT * FROM employees;
+
+rename
+RENAME TABLE employees TO workers;
+
+DROP: delete
+DROP TABLE employees;
+
+ALTER: add, delete, or modify
+ALTER TABLE employees
+ADD phone_number VARCHAR(15);
+
+ALTER TABLE employees
+RENAME COLUMN phone_number TO email;
+
+click on tableName
+
+changing email to have 100 chars
+ALTER TABLE employees
+MODIFY COLUMN email VARCHAR(100);
+
+
+to move columns around
+ALTER TABLE employees
+MODIFY email VARCHAR(100)
+AFTER last_name;
+SELECT * FROM employees;
+
+to make it first 
+ALTER TABLE employees
+MODIFY email VARCHAR(100)
+FIRST;
+
+drop a column
+ALTER TABLE employees
+DROP COLUMN email;
